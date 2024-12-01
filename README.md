@@ -34,7 +34,7 @@ services:
       - "3000:3000"
     environment:
       - SSH_USER=yoursshuser
-      - SSH_PUB_KEY_FILE=id_rsa.pub
+      - SSH_PRIVATE_KEY_FILE=id_rsa
       - REMOTE_HOST=192.168.1.10
       - SSH_PORT=22
       - REMOTE_PORT=3306
@@ -51,7 +51,7 @@ services:
 | Parameter     | Description   |
 | ------------- | ------------- |
 | SSH_USER 		| This will be the user to login via SSH.  |
-| SSH_PUB_KEY_FILE   | Specify the public key file name. It will be combined with the volume, for the previous example, /home/youruser/.ssh/id_rsa.pub |
+| SSH_PRIVATE_KEY_FILE   | Specify the private key file name. It will be combined with the volume, for the previous example, /home/youruser/.ssh/id_rsa |
 | REMOTE_HOST   | Remote IP or DNS for the server to access |
 | SSH_PORT      | Port used to SSH |
 | REMOTE_PORT   | Port of the service you want to access and listen to |
