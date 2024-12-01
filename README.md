@@ -28,7 +28,7 @@ This is a docker compose example to proxy a MariaDB instance running on the remo
 ```
 services:
   proxy-tunnel:
-    build: .
+    image: ghcr.io/alcalaperez/ssh-tunnel:main
     container_name: mariadb-ssh-tunnel
     ports:
       - "3000:3000"
