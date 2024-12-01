@@ -5,22 +5,22 @@ SSH tunnel on docker
 Access a remote service in a remote machine using a simple docker container. It will ssh into the remote host and listen on a remote port where you will have a service running.
 
 ```
---------------------------------------------------------------------
+--------------------------------------------------------------------------
 
                		             
-+-------------------------+				+------------------------+	
-|          LOCAL    	  |				|		  REMOTE		 |
-|         MACHINE     	  |				|		   HOST			 |
-|   +----------------+	  |				|   +-----------------+	 |
-|	|  proxy-tunnel  |	  |				|   | |    REMOTE     |	 |
-|	|	container	 |======== SSH ======>  | |    SERVICE    |	 |
-|	+----------------+	  |				|   | +---------------+	 |
-|						  |				|	|REMOTE PORT	  |  |
-|						  |				|	+-----------------+  |
-+-------------------------+				+------------------------+
-									FIREWALL (SSH_PORT Open)
++-------------------------+		    +------------------------+	
+|          LOCAL    	  |		    |        REMOTE	     |
+|         MACHINE     	  |		    |	      HOST           |
+|   +----------------+	  |		    |   +-----------------+  |
+|   |  proxy-tunnel  |	  |		    |   | |    REMOTE     |  |
+|   |	container    |======== SSH ==========>  | |   SERVICE     |  |
+|   +----------------+	  |	            |   | +---------------+  |
+|			  |		    |	| REMOTE PORT	  |  |
+|			  |		    |	+-----------------+  |
++-------------------------+		    +------------------------+
+				    FIREWALL (SSH_PORT Open)
 
---------------------------------------------------------------------
+--------------------------------------------------------------------------
 ```
 
 This is a docker compose example to proxy a MariaDB instance running on the remote VM on the default port 3306:
